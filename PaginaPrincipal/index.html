@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Juegos</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header id="search-banner"></header>
+
+    <main class="container">
+        <aside class="filters">
+            <h3>Filtros</h3>
+
+            <label for="genres-select">Género:</label>
+            <select id="genres-select">
+                <option value="All">Todos</option>
+                <option value="Action">Acción</option>
+                <option value="Adventure">Aventura</option>
+                <option value="Casual">Casual</option>
+                <option value="Indie">Indie</option>
+                <option value="RPG">RPG</option>
+                <option value="Simulation">Simulación</option>
+                <option value="Strategy">Estrategia</option>
+                <option value="Massively Multiplayer">Multijugador</option>
+                <option value="Early Access">Early Access</option>
+            </select>
+
+            <div class="sort-filter">
+                <label for="sort-price">Ordenar por precio:</label>
+                <select id="sort-price">
+                    <option value="none">Sin orden</option>
+                    <option value="asc">Menor a mayor</option>
+                    <option value="desc">Mayor a menor</option>
+                </select>
+            </div>
+            <label >Proximamente más filtros...</label>
+        </aside>
+
+        <section class="content-column">
+            <div class="products"></div>
+            <div class="pagination-numbers"></div>
+        </section>        
+    </main>
+
+    <section class="reviews">
+    <h2>Reseñas de nuestros clientes!</h2>
+    
+    <div class="review-grid">
+        <article class="review">
+            <h3>Laura M.</h3>
+            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+            <p>"¡Excelente selección de juegos! Encontré justo lo que buscaba y a muy buen precio."</p>
+        </article>
+
+        <article class="review">
+            <h3>Javier P.</h3>
+            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+            <p>"La plataforma es muy intuitiva y fácil de usar. ¡Altamente recomendada!"</p>
+        </article>
+
+        <article class="review">
+            <h3>Carmen R.</h3>
+            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i></p>
+            <p>"Me gustaría ver más variedad en juegos de estrategia, pero en general estoy satisfecha."</p>
+        </article>
+
+        <article class="review">
+            <h3>Daniel T.</h3>
+            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+            <p>"Buena experiencia, aunque algunas categorías cargan lento."</p>
+        </article>
+    </div>
+
+    <div class="submit-review">
+        <h3>¡Déjanos tu reseña! (Formspree)</h3>
+        <form action="https://formspree.io/f/xyzwvvlo" method="POST">
+            <label>
+                Tu correo electrónico:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Tu mensaje:
+                <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+<footer id="footer"></footer>
+
+<script type="module" src="index.js"></script>
+</body>
+</html>

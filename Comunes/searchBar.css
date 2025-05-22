@@ -1,0 +1,133 @@
+/* Banner de búsqueda */
+#search-banner {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: var(--padding-base);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: nowrap;
+    /* gap: 10px; */
+}
+
+/* Contenedor del logo y el nombre */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover{
+    transform: scale(1.05);
+}
+
+/* Logo */
+#search-banner #logo {
+    height: 40px;
+}
+
+/* Nombre del sitio */
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2b3169;
+}
+
+/* Contenedor de la barra de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex: 1; */
+    width: 35%; /*test*/
+}
+
+/* Input de búsqueda */
+#search-banner input {
+    padding: 10px;
+    font-size: var(--font-size-base);
+    outline: none;   
+    border: none; 
+}
+
+/* Contenedor del carrito */
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón del carrito */
+#search-banner #cart {
+    padding: 10px 15px;
+    background-color: #102E50;
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Hover botones */
+#search-banner button:hover,
+#cart:hover {
+    transform: scale(1.05);
+    background-color: #102E50;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+    width: -webkit-fill-available; /*test*/
+}
+
+.input-with-icon i {
+    margin-right: 8px;
+    color: #888;
+}
+
+.input-with-icon input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+/* @media (max-width: 780px) {
+    .logo-container {
+        border-radius: 4px;
+        background-color: #102E50;
+    }
+
+    .logo-container span{
+        display: none;
+    }
+    
+    #logo {
+        filter: brightness(0) invert(1);
+    }
+
+    #search-banner {
+        gap: 20px;
+    }
+    .search-container {
+        max-width: 100%;
+    }
+
+    .cart-text {
+        display: none;
+    }
+} */
