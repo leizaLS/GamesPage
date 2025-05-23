@@ -1,10 +1,10 @@
-import { db } from './Comunes/fireBase.js';
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-import { searchBar } from './Comunes/searchBar.js';
-import { footer } from './Comunes/footer.js';
+//import { db } from './Comunes/fireBase.js';
+//import { collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+//import { searchBar } from './Comunes/searchBar.js';
+//import { footer } from './Comunes/footer.js';
 
-searchBar();
-footer();
+//searchBar();
+//footer();
 
 // Variables del DOM
 const gamesContainer = document.querySelector(".products");
