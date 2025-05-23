@@ -1,3 +1,6 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+
 /* Banner de búsqueda */
 #search-banner {
     background-color: var(--primary-color);
@@ -14,14 +17,13 @@
     align-items: center;
     justify-content:space-between;
     flex-wrap: nowrap;
-    /* gap: 10px; */
 }
 
 /* Contenedor del logo y el nombre */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -37,9 +39,10 @@
 
 /* Nombre del sitio */
 .site-name {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2.4rem;
     color: #2b3169;
+    font-family: "Changa One", sans-serif;
+    font-style: normal;
 }
 
 /* Contenedor de la barra de búsqueda */
@@ -47,7 +50,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex: 1; */
     width: 35%; /*test*/
 }
 
@@ -56,7 +58,9 @@
     padding: 10px;
     font-size: var(--font-size-base);
     outline: none;   
-    border: none; 
+    border: none;
+    background-color: transparent;
+    color: white; 
 }
 
 /* Contenedor del carrito */
@@ -90,9 +94,9 @@
     align-items: center;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: white;
+    background-color:#353535;
     overflow: hidden;
-    width: -webkit-fill-available; /*test*/
+    width: -webkit-fill-available;
 }
 
 .input-with-icon i {
@@ -105,29 +109,3 @@
     outline: none;
     flex: 1;
 }
-
-/* @media (max-width: 780px) {
-    .logo-container {
-        border-radius: 4px;
-        background-color: #102E50;
-    }
-
-    .logo-container span{
-        display: none;
-    }
-    
-    #logo {
-        filter: brightness(0) invert(1);
-    }
-
-    #search-banner {
-        gap: 20px;
-    }
-    .search-container {
-        max-width: 100%;
-    }
-
-    .cart-text {
-        display: none;
-    }
-} */

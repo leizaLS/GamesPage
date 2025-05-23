@@ -2,6 +2,12 @@
 @import url("./products.css");
 @import url("../Comunes/footer.css");
 
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap');
+
 :root {
     --primary-color: #37AA9C;
     --secondary-color: #0b6161;
@@ -45,12 +51,16 @@ body {
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: rgb(185, 185, 185);
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
 }
 
 .filters h3 {
     margin-top: 0;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-size: 1.2rem;
+    font-family: "Raleway";
 }
 
 .filters label {
@@ -77,11 +87,6 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-/* Filtro de orden */
-.sort-filter label {
-    color: var(--white);
 }
 
 .sort-filter select {
@@ -129,6 +134,7 @@ body {
 .reviews h2 {
     text-align: center;
     margin: 0;
+    font-family: "Raleway";
 }
 
 .review-grid {
@@ -144,11 +150,13 @@ body {
 
 .review h3 {
     margin-top: 0;
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: "Lato", sans-serif;
 }
 
 .review p {
     margin: 5px 0;
+    font-family: "Mukta Vaani", sans-serif;
 }
 
 .review i {
@@ -160,6 +168,8 @@ body {
     margin-top: 2rem;
     padding: 1rem;
     border-top: 1px solid #ccc;
+    font-family: "Mukta Vaani", sans-serif;
+    color:#c7c7c7;
 }
 
 .submit-review h3 {
@@ -188,7 +198,7 @@ body {
 .submit-review button {
     width: max-content;
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -218,10 +228,6 @@ body {
     .logo-container span{
         display: none;
     }
-    
-    #search-banner {
-        /* gap: 20px; */
-    }
 
     #search-baner input {
         width: auto;
@@ -235,10 +241,6 @@ body {
 @media (max-width: 450px) {
     #search-banner {
         padding: 20px 10px;
-    }
-
-    #cart span {
-        display: none;
     }
 
     .search-container {

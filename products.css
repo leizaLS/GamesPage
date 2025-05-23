@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+    font-family: "Raleway";
 }
 
 .product {
@@ -11,11 +12,11 @@
     padding: 15px;
     text-align: center;
     cursor: pointer;
-
     transition: 
         transform 1s ease,
         box-shadow 1s ease,
-        background-color 1s ease; /* Puedes ajustar 1s a lo que desees */
+        background-color 1s ease;
+    color: #c4c4c4;
 }
 
 .product:hover {
@@ -37,6 +38,8 @@
 }
 
 .product p {
-    font-size: 0.9rem;
-    color: var(--light-gray);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-family: "Bebas Neue", sans-serif;
+    margin: 2px;
 }

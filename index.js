@@ -49,7 +49,7 @@ function renderPage(pageNumber) {
         gameElement.innerHTML = `
             <img src="${game.capsule_image}" alt="${game.name}" class="game-image">
             <h4>${game.name}</h4>
-            <p>Precio: $${priceValue.toFixed(2)}</p>
+            <p>$${priceValue.toFixed(2)}</p>
         `;
         gamesContainer.appendChild(gameElement);
     });
