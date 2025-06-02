@@ -1,7 +1,7 @@
-import { db } from './Comunes/fireBase.js';
+import { db } from './Componentes/fireBase.js';
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-import { searchBar } from './Comunes/searchBar.js';
-import { footer } from './Comunes/footer.js';
+import { searchBar } from './Componentes/searchBar.js';
+import { footer } from './Componentes/footer.js';
 
 searchBar();
 footer();

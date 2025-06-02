@@ -1,4 +1,4 @@
-import { searchBar } from '../Comunes/searchBar.js';
+import { searchBar } from '../Componentes/searchBar.js';
 searchBar();
 
 const idJuego = localStorage.getItem('selectedGameId');

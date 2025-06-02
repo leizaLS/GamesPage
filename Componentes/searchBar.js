@@ -2,7 +2,7 @@ export function searchBar() {
     const element = document.getElementById("search-banner");
     element.innerHTML = `
         <div class="logo-container" onclick="window.location.href='../index.html';">
-            <img id="logo" src="../Comunes/logo.png" alt="Logo">
+            <img id="logo" src="../Componentes/logo.png" alt="Logo">
             <span class="site-name">GAMESTOCK</span>
         </div>
         <div class="search-container">
