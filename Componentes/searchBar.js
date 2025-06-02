@@ -5,7 +5,7 @@ export function searchBar() {
     const logoPath = isInRoot ? "./Componentes/logo.png" : "../Componentes/logo.png";
 
     element.innerHTML = `
-        <div class="logo-container" onclick="window.location.href='https://leizals.github.io/GamesPage/';">
+        <div class="logo-container" onclick="window.location.href='${isInRoot ? './index.html' : '../index.html'}';">
             <img id="logo" src="${logoPath}" alt="Logo">
             <span class="site-name">GAMESTOCK</span>
         </div>
