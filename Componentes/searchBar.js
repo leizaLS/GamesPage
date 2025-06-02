@@ -1,7 +1,7 @@
 export function searchBar() {
     const element = document.getElementById("search-banner");
 
-    const isInRoot = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+    const isInRoot = window.location.pathname.endsWith("index.html") || window.location == 'https://leizals.github.io/GamesPage/'
     const logoPath = isInRoot ? "./Componentes/logo.png" : "../Componentes/logo.png";
 
     element.innerHTML = `
