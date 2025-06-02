@@ -9,7 +9,7 @@
 .product {
     background-color: var(--dark-gray);
     border-radius: var(--border-radius);
-    padding: 15px;
+    padding: 2px;
     text-align: center;
     cursor: pointer;
     transition: 
@@ -29,7 +29,6 @@
     width: 100%;
     height: auto;
     border-radius: var(--border-radius);
-    margin-bottom: 10px;
 }
 
 .product h4 {
