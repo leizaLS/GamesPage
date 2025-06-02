@@ -1,6 +1,6 @@
-@import url("./Componentes/searchBar.css");
+@import url("Componentes/searchBar.css");
 @import url("./products.css");
-@import url("./Componentes/footer.css");
+@import url("Componentes/footer.css");
 
 /* fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
