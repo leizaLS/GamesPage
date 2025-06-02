@@ -1,8 +1,12 @@
 export function searchBar() {
     const element = document.getElementById("search-banner");
+
+    const isInRoot = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+    const logoPath = isInRoot ? "./Componentes/logo.png" : "../Componentes/logo.png";
+
     element.innerHTML = `
-        <div class="logo-container" onclick="window.location.href='../index.html';">
-            <img id="logo" src="./Componentes/logo.png" alt="Logo">
+        <div class="logo-container" onclick="window.location.href='${isInRoot ? './index.html' : '../index.html'}';">
+            <img id="logo" src="${logoPath}" alt="Logo">
             <span class="site-name">GAMESTOCK</span>
         </div>
         <div class="search-container">
