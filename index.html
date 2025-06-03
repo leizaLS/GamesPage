@@ -75,23 +75,36 @@
         </article>
     </div>
 
-    <div class="submit-review">
-        <h3>¡Déjanos tu reseña! (Formspree)</h3>
-        <form action="https://formspree.io/f/xyzwvvlo" method="POST">
+    <div class="info-contact">
+        <div class="submit-review">
+            <h3>¡Déjanos tu reseña! (Formspree)</h3>
+            <form action="https://formspree.io/f/xyzwvvlo" method="POST">
+                <label>
+                    Tu correo electrónico:
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Tu mensaje:
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="map">
+            <h3>¡Acercate a nuestra sucursal!</h1>
             <label>
-                Tu correo electrónico:
-                <input type="email" name="email" required>
+                HORARIOS DE ATENCIÓN
+                <span style="display: block;">Lunes a Sábados 9:00 - 19:00</span>
+                <span style="display: block;">Domingos 9:00-16:00</span>
             </label>
-            <label>
-                Tu mensaje:
-                <textarea name="message" rows="5" required></textarea>
-            </label>
-            <button type="submit">Enviar</button>
-        </form>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.421800743535!2d-58.25769182493703!3d-34.719760863634775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f18.1!3m3!1m2!1s0x95a32e40864ce019%3A0xb46bf0e5f8abafc6!2sQuilmes%20Peatonal!5e0!3m2!1ses!2sar!4v1748974359519!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 </section>
 <footer id="footer"></footer>
 
 <script type="module" src="index.js"></script>
+
 </body>
 </html>

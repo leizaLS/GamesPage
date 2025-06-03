@@ -165,11 +165,8 @@ body {
 
 /* Dejar review */
 .submit-review {
-    margin-top: 2rem;
-    padding: 1rem;
-    border-top: 1px solid #ccc;
-    font-family: "Mukta Vaani", sans-serif;
-    color:#c7c7c7;
+    /* background-color: red; */
+    width: 50%;
 }
 
 .submit-review h3 {
@@ -236,6 +233,10 @@ body {
     .search-container {
         width: 60%;
     }
+
+    .info-contact {
+        display: grid !important;
+    }
 }
 
 @media (max-width: 450px) {
@@ -266,4 +267,25 @@ body {
     .product h4, p {
         margin: 5px;
     }
+}
+
+/* new */
+.info-contact {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+    display: flex;
+    font-family: "Mukta Vaani", sans-serif;
+    color:#c7c7c7;
+}
+
+.map {
+    width: 50%;
+    display: grid;
+}
+
+.map iframe {
+    width: 250px; 
+    height: 250px;
+    border-radius: 5px;
 }
