@@ -234,8 +234,8 @@ body {
         width: 60%;
     }
 
-    .info-contact {
-        display: grid !important;
+    .reviews .info-contact {
+        display: grid;
     }
 }
 
