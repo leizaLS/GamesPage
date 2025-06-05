@@ -165,8 +165,8 @@ body {
 
 /* Dejar review */
 .submit-review {
-    /* background-color: red; */
     width: 50%;
+    /* background-color: #f0c956; */
 }
 
 .submit-review h3 {
@@ -177,6 +177,7 @@ body {
     display: inline-flex;
     flex-direction: column;
     gap: 0.75rem;
+    width: 75%;
 }
 
 .submit-review input,
@@ -237,6 +238,16 @@ body {
     .reviews .info-contact {
         display: grid;
     }
+
+    .submit-review, .info-contact .map {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .submit-review form {
+        width: 100%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -259,11 +270,7 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
         gap: 10px;
     }
-
-    .product {
-        height: 185px;
-    }
-
+    
     .product h4, p {
         margin: 5px;
     }
