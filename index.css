@@ -166,7 +166,6 @@ body {
 /* Dejar review */
 .submit-review {
     width: 50%;
-    /* background-color: #f0c956; */
 }
 
 .submit-review h3 {
@@ -270,7 +269,7 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
         gap: 10px;
     }
-    
+
     .product h4, p {
         margin: 5px;
     }
