@@ -15,7 +15,7 @@
         <aside class="filters">
             <h3>FILTROS</h3>
 
-            <label for="genres-select">Género:</label>
+            <label for="genres-select">Género</label>
             <select id="genres-select">
                 <option value="All">Todos</option>
                 <option value="Action">Acción</option>
@@ -30,14 +30,33 @@
             </select>
 
             <div class="sort-filter">
-                <label for="sort-price">Ordenar por precio:</label>
+                <label for="sort-price">Ordenar por precio</label>
                 <select id="sort-price">
                     <option value="none">Sin orden</option>
                     <option value="asc">Menor a mayor</option>
                     <option value="desc">Mayor a menor</option>
                 </select>
             </div>
-            <label >Proximamente más filtros...</label>
+
+            <div class="platform-filter">
+                <label for="platform-select">Plataforma</label>
+                <select id="platform-select">
+                    <option value="pc">PC</option>
+                    <option value="playstation">PlayStation* (Próximamente)</option>
+                    <option value="nintendo">Nintendo* (Próximamente)</option>
+                    <option value="xbox">Xbox* (Próximamente)</option>
+                </select>
+            </div>
+
+            <div class="release-filter">
+                <label for="release-select">Fecha lanzamiento</label>
+                <select id="release-select">
+                    <option value="all">Sin orden</option> 
+                    <option value="new">Más nuevos</option>
+                    <option value="old">Más antiguos</option>                
+                </select>
+            </div>
+            
         </aside>
 
         <section class="content-column">
