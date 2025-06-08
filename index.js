@@ -11,6 +11,8 @@ const gamesContainer = document.querySelector(".products");
 const paginationContainer = document.querySelector(".pagination-numbers");
 const genresSelect = document.getElementById("genres-select");
 const sortPriceSelect = document.getElementById("sort-price");
+//test
+const releaseSelect = document.getElementById("release-select");
 
 let PAGE_SIZE = 12  ; // Valor inicial
 let allGames = [];
@@ -25,7 +27,8 @@ async function fetchAllGames() {
             allGames.push(data);
         });
 
-        console.log("Juegos obtenidos:", allGames); 
+        console.log("Juegos obtenidos:", allGames);
+        
         filteredGames = allGames;
         applyFilters();
     } catch (error) {
@@ -71,16 +74,30 @@ function createPaginationButtons() {
 function applyFilters() {
     const selectedGenre = genresSelect.value;
     const sortOption = sortPriceSelect.value;
+    const releaseOption = releaseSelect.value;
 
     filteredGames = allGames.filter(game => {
         const genreOk = selectedGenre === "All" || (game.genres && game.genres.includes(selectedGenre));
         return genreOk;
     });
 
-    if (sortOption === "asc") {
-        filteredGames.sort((a, b) => parseFloat(a.price.replace('$', '').trim()) - parseFloat(b.price.replace('$', '').trim()));
+    if (releaseOption === "new") {
+        console.log("Ordenando por fecha: más nuevos primero");
+        filteredGames.sort((a, b) => {
+            return parseInt(b.id, 10) - parseInt(a.id, 10); // más nuevos primero (id más grande primero)
+        });
+    } else if (releaseOption === "old") {
+        filteredGames.sort((a, b) => {
+            return parseInt(a.id, 10) - parseInt(b.id, 10); // más antiguos primero (id más chico primero)
+        });
+    } else if (sortOption === "asc") {
+        filteredGames.sort((a, b) => {
+            return parseFloat(a.price.replace('$', '').trim()) - parseFloat(b.price.replace('$', '').trim());
+        });
     } else if (sortOption === "desc") {
-        filteredGames.sort((a, b) => parseFloat(b.price.replace('$', '').trim()) - parseFloat(a.price.replace('$', '').trim()));
+        filteredGames.sort((a, b) => {
+            return parseFloat(b.price.replace('$', '').trim()) - parseFloat(a.price.replace('$', '').trim());
+        });
     }
 
     renderPage(1);
@@ -103,7 +120,19 @@ window.addEventListener("resize", updatePageSize);
 updatePageSize();
 
 genresSelect.addEventListener("change", applyFilters);
-sortPriceSelect.addEventListener("change", applyFilters);
+sortPriceSelect.addEventListener("change", () => {
+    if (sortPriceSelect.value !== "none") {
+        releaseSelect.value = "all";
+    }
+    applyFilters();
+});
+
+releaseSelect.addEventListener("change", () => {
+    if (releaseSelect.value !== "all") {
+        sortPriceSelect.value = "none";
+    }
+    applyFilters();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchAllGames();
