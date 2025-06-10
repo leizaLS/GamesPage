@@ -46,7 +46,7 @@ body {
 /* Filtros */
 .filters {
     width: 250px;
-    height: 700px;
+    height: fit-content;
     background-color: var(--dark-gray);
     padding: 20px;
     border-radius: var(--border-radius);
@@ -54,10 +54,11 @@ body {
     color: rgb(185, 185, 185);
     font-family: "Lato", sans-serif;
     font-weight: 100;
+    /* padding-bottom: 5%; */
 }
 
 .filters h3 {
-    margin-top: 0;
+    margin: 0;
     color: var(--primary-color);
     font-size: 1.2rem;
     font-family: "Raleway";
@@ -216,7 +217,29 @@ body {
         width: 80%;
         height: auto;
     }
+
+    /* menu desplegable */
+    .filters .filters-header .showMenu {
+        visibility: unset;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .filters-menu {
+        visibility: hidden;
+        max-height: 0;
+        /* transition: max-height 0.4s ease, padding 0.4s ease; */
+    }
+
+    .filters-menu.active {
+        visibility: visible;
+        max-height: fit-content;
+    }
 }
+
 @media (max-width: 780px) {
     .logo-container {
         border-radius: 4px;
@@ -294,4 +317,15 @@ body {
     width: 250px; 
     height: 250px;
     border-radius: 5px;
+}
+
+/* menu desplegable */
+.filters-header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.filters-header .showMenu {
+    visibility: hidden;
 }

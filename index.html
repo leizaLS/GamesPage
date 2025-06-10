@@ -13,50 +13,54 @@
 
     <main class="container">
         <aside class="filters">
-            <h3>FILTROS</h3>
-
-            <label for="genres-select">Género</label>
-            <select id="genres-select">
-                <option value="All">Todos</option>
-                <option value="Action">Acción</option>
-                <option value="Adventure">Aventura</option>
-                <option value="Casual">Casual</option>
-                <option value="Indie">Indie</option>
-                <option value="RPG">RPG</option>
-                <option value="Simulation">Simulación</option>
-                <option value="Strategy">Estrategia</option>
-                <option value="Massively Multiplayer">Multijugador</option>
-                <option value="Early Access">Early Access</option>
-            </select>
-
-            <div class="sort-filter">
-                <label for="sort-price">Ordenar por precio</label>
-                <select id="sort-price">
-                    <option value="none">Sin orden</option>
-                    <option value="asc">Menor a mayor</option>
-                    <option value="desc">Mayor a menor</option>
-                </select>
+            <div class="filters-header">
+                <h3>FILTROS</h3>
+                <button class="showMenu">☰</button>
             </div>
 
-            <div class="platform-filter">
-                <label for="platform-select">Plataforma</label>
-                <select id="platform-select">
-                    <option value="pc">PC</option>
-                    <option value="playstation">PlayStation* (Próximamente)</option>
-                    <option value="nintendo">Nintendo* (Próximamente)</option>
-                    <option value="xbox">Xbox* (Próximamente)</option>
+            <div class="filters-menu">
+                <label for="genres-select">Género</label>
+                <select id="genres-select">
+                    <option value="All">Todos</option>
+                    <option value="Action">Acción</option>
+                    <option value="Adventure">Aventura</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Indie">Indie</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Simulation">Simulación</option>
+                    <option value="Strategy">Estrategia</option>
+                    <option value="Massively Multiplayer">Multijugador</option>
+                    <option value="Early Access">Early Access</option>
                 </select>
-            </div>
 
-            <div class="release-filter">
-                <label for="release-select">Fecha lanzamiento</label>
-                <select id="release-select">
-                    <option value="all">Sin orden</option> 
-                    <option value="new">Más nuevos</option>
-                    <option value="old">Más antiguos</option>                
-                </select>
+                <div class="sort-filter">
+                    <label for="sort-price">Ordenar por precio</label>
+                    <select id="sort-price">
+                        <option value="none">Sin orden</option>
+                        <option value="asc">Menor a mayor</option>
+                        <option value="desc">Mayor a menor</option>
+                    </select>
+                </div>
+
+                <div class="platform-filter">
+                    <label for="platform-select">Plataforma</label>
+                    <select id="platform-select">
+                        <option value="pc">PC</option>
+                        <option value="playstation">PlayStation* (Próximamente)</option>
+                        <option value="nintendo">Nintendo* (Próximamente)</option>
+                        <option value="xbox">Xbox* (Próximamente)</option>
+                    </select>
+                </div>
+
+                <div class="release-filter">
+                    <label for="release-select">Fecha lanzamiento</label>
+                    <select id="release-select">
+                        <option value="all">Sin orden</option> 
+                        <option value="new">Más nuevos</option>
+                        <option value="old">Más antiguos</option>                
+                    </select>
+                </div>
             </div>
-            
         </aside>
 
         <section class="content-column">
@@ -124,6 +128,5 @@
 <footer id="footer"></footer>
 
 <script type="module" src="index.js"></script>
-
 </body>
 </html>

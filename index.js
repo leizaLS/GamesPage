@@ -11,8 +11,8 @@ const gamesContainer = document.querySelector(".products");
 const paginationContainer = document.querySelector(".pagination-numbers");
 const genresSelect = document.getElementById("genres-select");
 const sortPriceSelect = document.getElementById("sort-price");
-//test
 const releaseSelect = document.getElementById("release-select");
+const showMenu = document.querySelector('.showMenu');
 
 let PAGE_SIZE = 12  ; // Valor inicial
 let allGames = [];
@@ -82,13 +82,12 @@ function applyFilters() {
     });
 
     if (releaseOption === "new") {
-        console.log("Ordenando por fecha: más nuevos primero");
         filteredGames.sort((a, b) => {
-            return parseInt(b.id, 10) - parseInt(a.id, 10); // más nuevos primero (id más grande primero)
+            return parseInt(b.id, 10) - parseInt(a.id, 10); // más nuevos
         });
     } else if (releaseOption === "old") {
         filteredGames.sort((a, b) => {
-            return parseInt(a.id, 10) - parseInt(b.id, 10); // más antiguos primero (id más chico primero)
+            return parseInt(a.id, 10) - parseInt(b.id, 10); // más antiguos 
         });
     } else if (sortOption === "asc") {
         filteredGames.sort((a, b) => {
@@ -153,4 +152,9 @@ gamesContainer.addEventListener("click", (event) => {
             window.location.href = './DetalleProducto/detail.html';
         }
     }
+});
+
+showMenu.addEventListener("click", () => {
+    const menu = document.querySelector(".filters-menu");
+    menu.classList.toggle("active");
 });
