@@ -54,7 +54,6 @@ body {
     color: rgb(185, 185, 185);
     font-family: "Lato", sans-serif;
     font-weight: 100;
-    /* padding-bottom: 5%; */
 }
 
 .filters h3 {
@@ -138,15 +137,13 @@ body {
     font-family: "Raleway";
 }
 
-.review-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.review-items {
+    display: flex;
     gap: 20px;
 }
 
 .review {
     padding: 20px;
-    border-radius: 8px;
 }
 
 .review h3 {
@@ -214,29 +211,15 @@ body {
     }
 
     .filters {
-        width: 80%;
+        width: auto;
         height: auto;
     }
 
-    /* menu desplegable */
-    .filters .filters-header .showMenu {
-        visibility: unset;
-        background-color: transparent;
-        cursor: pointer;
-        border-radius: 5px;
-        border: 2px solid var(--primary-color);
-        color: var(--primary-color);
-    }
-
     .filters-menu {
-        visibility: hidden;
-        max-height: 0;
-        /* transition: max-height 0.4s ease, padding 0.4s ease; */
-    }
-
-    .filters-menu.active {
-        visibility: visible;
         max-height: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 }
 
@@ -264,11 +247,49 @@ body {
     .submit-review, .info-contact .map {
         width: 100%;
     }
+
+    .container {
+        padding: 0 5px;
+    }
+
 }
 
 @media (max-width: 600px) {
     .submit-review form {
         width: 100%;
+    }
+
+    .review-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: unset;
+    }
+
+    .review {
+        width: 50%;
+    }
+
+    /* menu desplegable */
+    .filters .filters-header .showMenu {
+        visibility: unset;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .filters-menu {
+        visibility: hidden;
+        max-height: 0;
+    }
+
+    .filters-menu.active {
+        visibility: visible;
+        max-height: fit-content;
+        display: unset;
+        align-items: center;
+        gap: 0;
     }
 }
 
@@ -284,7 +305,7 @@ body {
     
     .filters {
         width: auto;
-        padding: 10px;
+        padding: 20px 20px 10px;
     }
 
     .products {
