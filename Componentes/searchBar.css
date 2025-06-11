@@ -19,7 +19,6 @@
     flex-wrap: nowrap;
 }
 
-/* Contenedor del logo y el nombre */
 .logo-container {
     display: flex;
     align-items: center;
@@ -39,7 +38,7 @@
 
 /* Nombre del sitio */
 .site-name {
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: #2b3169;
     font-family: "Changa One", sans-serif;
     font-style: normal;
@@ -63,17 +62,15 @@
     color: white; 
 }
 
-/* Contenedor del carrito */
-.cart-container {
+.bar-items {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 5px
 }
 
-/* Botón del carrito */
-#search-banner #cart {
+/* Botón del search bar */
+.bar-items button {
     padding: 10px 15px;
-    background-color: #102E50;
+    background-color: #417b70;
     border: none;
     border-radius: var(--border-radius);
     color: var(--white);
@@ -83,8 +80,7 @@
 }
 
 /* Hover botones */
-#search-banner button:hover,
-#cart:hover {
+#search-banner button:hover {
     transform: scale(1.05);
     background-color: #102E50;
 }
@@ -108,4 +104,37 @@
     border: none;
     outline: none;
     flex: 1;
+}
+
+/* nuevo boton buscar */
+.bar-items .mobile-search {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .site-name{
+        display: none;
+    }
+
+    #search-baner input {
+        width: auto;
+    }
+
+    .search-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 550px) {
+    #search-banner {
+        padding: 20px 5px;
+    }
+
+    .site-name, .bar-items .mobile-search {
+        display: unset;
+    }
+
+    .search-container {
+        display: none;
+    }
 }

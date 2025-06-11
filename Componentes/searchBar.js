@@ -15,11 +15,18 @@ export function searchBar() {
                 <input type="text" id="search-input" placeholder="Buscar...">
             </div>
         </div>
-        <div class="cart-container">
-            <button id="cart">
-                <span class="cart-text"></span>
-                <i class="fa-solid fa-cart-shopping"></i>
+        <div class="bar-items">
+            <button class="mobile-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
+
+            <button title="Iniciar sesión" id="account">
+                <i class="fa-solid fa-user"></i>
+            </button>
+
+            <button id="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>            
         </div>
     `;
 }
