@@ -13,6 +13,7 @@ const genresSelect = document.getElementById("genres-select");
 const sortPriceSelect = document.getElementById("sort-price");
 const releaseSelect = document.getElementById("release-select");
 const showMenu = document.querySelector('.showMenu');
+const searchMobile = document.querySelector('.mobile-search');
 
 let PAGE_SIZE = 12  ; // Valor inicial
 let allGames = [];
@@ -157,4 +158,9 @@ gamesContainer.addEventListener("click", (event) => {
 showMenu.addEventListener("click", () => {
     const menu = document.querySelector(".filters-menu");
     menu.classList.toggle("active");
+});
+
+searchMobile.addEventListener("click", () => {
+    document.getElementById("search-banner").classList.toggle("active");
+    document.querySelector(".search-container").classList.toggle("active");
 });

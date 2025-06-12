@@ -137,4 +137,17 @@
     .search-container {
         display: none;
     }
+
+    /* expandir search bar */
+    #search-banner.active {
+        padding: 20px 5px 65px;
+    }
+
+    .search-container.active {
+        display: unset;
+        position: absolute;
+        top: 70px;
+        padding-left: 10px;
+        width: 85%;
+    }
 }
