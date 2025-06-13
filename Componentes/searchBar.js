@@ -29,4 +29,14 @@ export function searchBar() {
             </button>            
         </div>
     `;
+
+    //Mostrar buscador en móvil
+    const searchMobile = document.querySelector('.mobile-search');
+
+    if (searchMobile) {
+        searchMobile.addEventListener("click", () => {
+            document.getElementById("search-banner").classList.toggle("active");
+            document.querySelector(".search-container").classList.toggle("active");
+        });
+    }
 }

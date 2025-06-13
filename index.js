@@ -13,12 +13,13 @@ const genresSelect = document.getElementById("genres-select");
 const sortPriceSelect = document.getElementById("sort-price");
 const releaseSelect = document.getElementById("release-select");
 const showMenu = document.querySelector('.showMenu');
-const searchMobile = document.querySelector('.mobile-search');
 
-let PAGE_SIZE = 12  ; // Valor inicial
+let PAGE_SIZE = 12;
+let currentPage = 1;
 let allGames = [];
 let filteredGames = [];
 
+// Fetch juegos desde Firebase
 async function fetchAllGames() {
     try {
         const snapshot = await getDocs(collection(db, "games"));
@@ -29,7 +30,7 @@ async function fetchAllGames() {
         });
 
         console.log("Juegos obtenidos:", allGames);
-        
+
         filteredGames = allGames;
         applyFilters();
     } catch (error) {
@@ -37,7 +38,9 @@ async function fetchAllGames() {
     }
 }
 
+// Renderiza una página específica
 function renderPage(pageNumber) {
+    currentPage = pageNumber;
     gamesContainer.innerHTML = "";
     const start = (pageNumber - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
@@ -59,6 +62,7 @@ function renderPage(pageNumber) {
     });
 }
 
+// Botones de paginación
 function createPaginationButtons() {
     paginationContainer.innerHTML = "";
     const totalPages = Math.ceil(filteredGames.length / PAGE_SIZE);
@@ -67,11 +71,15 @@ function createPaginationButtons() {
         const btn = document.createElement("button");
         btn.textContent = i;
         btn.classList.add("pagination-button");
+        if (i === currentPage) {
+            btn.classList.add("active"); // Opción: marcar la actual
+        }
         btn.addEventListener("click", () => renderPage(i));
         paginationContainer.appendChild(btn);
     }
 }
 
+// Aplica los filtros actuales
 function applyFilters() {
     const selectedGenre = genresSelect.value;
     const sortOption = sortPriceSelect.value;
@@ -83,47 +91,53 @@ function applyFilters() {
     });
 
     if (releaseOption === "new") {
-        filteredGames.sort((a, b) => {
-            return parseInt(b.id, 10) - parseInt(a.id, 10); // más nuevos
-        });
+        filteredGames.sort((a, b) => parseInt(b.id, 10) - parseInt(a.id, 10));
     } else if (releaseOption === "old") {
-        filteredGames.sort((a, b) => {
-            return parseInt(a.id, 10) - parseInt(b.id, 10); // más antiguos 
-        });
+        filteredGames.sort((a, b) => parseInt(a.id, 10) - parseInt(b.id, 10));
     } else if (sortOption === "asc") {
-        filteredGames.sort((a, b) => {
-            return parseFloat(a.price.replace('$', '').trim()) - parseFloat(b.price.replace('$', '').trim());
-        });
+        filteredGames.sort((a, b) => parseFloat(a.price.replace('$', '').trim()) - parseFloat(b.price.replace('$', '').trim()));
     } else if (sortOption === "desc") {
-        filteredGames.sort((a, b) => {
-            return parseFloat(b.price.replace('$', '').trim()) - parseFloat(a.price.replace('$', '').trim());
-        });
+        filteredGames.sort((a, b) => parseFloat(b.price.replace('$', '').trim()) - parseFloat(a.price.replace('$', '').trim()));
     }
 
-    renderPage(1);
+    const totalPages = Math.ceil(filteredGames.length / PAGE_SIZE);
+    if (currentPage > totalPages) {
+        currentPage = 1;
+    }
+
+    renderPage(currentPage);
     createPaginationButtons();
 }
 
+// Ajusta la cantidad de productos por página según el ancho
 function updatePageSize() {
     const width = window.innerWidth;
-    if(width >= 1830) {
+    if (width >= 1830) {
         PAGE_SIZE = 28;
     } else if (width >= 1600) {
         PAGE_SIZE = 25;
     } else if (width >= 1440) {
         PAGE_SIZE = 20;
+    } else {
+        PAGE_SIZE = 12;
     }
     applyFilters();
 }
 
+// Listeners
 window.addEventListener("resize", updatePageSize);
 updatePageSize();
 
-genresSelect.addEventListener("change", applyFilters);
+genresSelect.addEventListener("change", () => {
+    currentPage = 1;
+    applyFilters();
+});
+
 sortPriceSelect.addEventListener("change", () => {
     if (sortPriceSelect.value !== "none") {
         releaseSelect.value = "all";
     }
+    currentPage = 1;
     applyFilters();
 });
 
@@ -131,6 +145,7 @@ releaseSelect.addEventListener("change", () => {
     if (releaseSelect.value !== "all") {
         sortPriceSelect.value = "none";
     }
+    currentPage = 1;
     applyFilters();
 });
 
@@ -138,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchAllGames();
 });
 
-// Clicker
+// Click para ir al detalle
 gamesContainer.addEventListener("click", (event) => {
     let target = event.target;
 
@@ -155,12 +170,8 @@ gamesContainer.addEventListener("click", (event) => {
     }
 });
 
+// Menú lateral para filtros en móviles
 showMenu.addEventListener("click", () => {
     const menu = document.querySelector(".filters-menu");
     menu.classList.toggle("active");
-});
-
-searchMobile.addEventListener("click", () => {
-    document.getElementById("search-banner").classList.toggle("active");
-    document.querySelector(".search-container").classList.toggle("active");
 });
