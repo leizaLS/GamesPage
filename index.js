@@ -175,3 +175,5 @@ showMenu.addEventListener("click", () => {
     const menu = document.querySelector(".filters-menu");
     menu.classList.toggle("active");
 });
+
+// Test de carrito

@@ -26,6 +26,7 @@ export function searchBar() {
 
             <button id="cart">
                 <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count"></span>
             </button>            
         </div>
     `;

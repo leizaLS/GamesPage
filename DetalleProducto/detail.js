@@ -95,3 +95,19 @@ if (idJuego) {
     else {
     document.getElementById('game-name').textContent = 'No se encontró ID de juego en localStorage.';
 }
+
+// Test carrito
+const addItem = document.querySelector('.buy-button');
+
+addItem.addEventListener("click", () => {
+    var n = document.getElementById('cart-count');
+    // console.log (n);
+
+    if (n.textContent == "") {
+        n.textContent = "(1)";
+    }
+    else {
+        let count = parseInt(n.textContent.replace(/[()]/g, ""), 10);
+        n.textContent = `(${count + 1})`;
+    }
+});
