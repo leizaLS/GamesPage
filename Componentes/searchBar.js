@@ -4,6 +4,11 @@ export function searchBar() {
     const isInRoot = window.location.pathname.endsWith("index.html") || window.location == 'https://leizals.github.io/GamesPage/'
     const logoPath = isInRoot ? "./Componentes/logo.png" : "../Componentes/logo.png";
 
+    let n = "";
+    if (localStorage.getItem("cartList")){
+        n = "(" + JSON.parse(localStorage.getItem("cartList")).length + ")";
+    }
+
     element.innerHTML = `
         <div class="logo-container" onclick="window.location.href='${isInRoot ? './index.html' : '../index.html'}';">
             <img id="logo" src="${logoPath}" alt="Logo">
@@ -26,7 +31,7 @@ export function searchBar() {
 
             <button id="cart">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count"></span>
+                <span id="cart-count">${n}</span>
             </button>            
         </div>
     `;

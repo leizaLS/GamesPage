@@ -96,18 +96,26 @@ if (idJuego) {
     document.getElementById('game-name').textContent = 'No se encontró ID de juego en localStorage.';
 }
 
-// Test carrito
+// Carrito
 const addItem = document.querySelector('.buy-button');
 
-addItem.addEventListener("click", () => {
-    var n = document.getElementById('cart-count');
-    // console.log (n);
+function cartItems(){
+    // Aumentar valor del carrito en search bar
+    const el = document.getElementById('cart-count');
+    const count = parseInt(el.textContent.replace(/[()]/g, ""), 10) || 0;
+    el.textContent = `(${count + 1})`;
+}
 
-    if (n.textContent == "") {
-        n.textContent = "(1)";
-    }
-    else {
-        let count = parseInt(n.textContent.replace(/[()]/g, ""), 10);
-        n.textContent = `(${count + 1})`;
-    }
+addItem.addEventListener("click", () => {
+    if (!localStorage.getItem("cartList")) {
+        localStorage.setItem("cartList", JSON.stringify([]));
+    } 
+    
+    let list = JSON.parse(localStorage.getItem("cartList")); 
+    let id = localStorage.getItem("selectedGameId");
+    list.push(id); 
+
+    localStorage.setItem("cartList", JSON.stringify(list)); 
+    cartItems();
 });
+
