@@ -1,0 +1,10 @@
+@import url("../Componentes/searchBar.css");
+@import url("../index.css");
+
+.container {
+    background-color: var(--dark-gray);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    display: grid;  
+}

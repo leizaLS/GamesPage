@@ -27,7 +27,6 @@ body {
   border-radius: var(--border-radius);
   padding: var(--padding-base);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  display: none;
 }
 
 /* Elementos de contenido */

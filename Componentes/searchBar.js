@@ -29,7 +29,7 @@ export function searchBar() {
                 <i class="fa-solid fa-user"></i>
             </button>
 
-            <button id="cart">
+            <button id="cart" onclick="window.location.href='../Cart/cart.html'">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="cart-count">${n}</span>
             </button>            
@@ -46,5 +46,3 @@ export function searchBar() {
         });
     }
 }
-
-//test
