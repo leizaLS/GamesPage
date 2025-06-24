@@ -10,15 +10,42 @@
 </head>
 <body>
     <header id="search-banner"></header>
-    <main class="container">
-        <h2>Pago</h2>
-        <h4>Detalle:</h4>
-        <div class="items"></div>
 
-        <div class="cart-total">
-            <h2>Total: <span id="total-price">$0.00</span></h2>
+    <main class="container">
+        <div class="detail">
+            <h3>Detalle de compra:</h3>
+            <div class="items"></div>
+
+            <div class="cart-total">
+                <h3>Total: <span id="total-price">$0.00</span></h3>
+            </div>
+        </div>
+
+        <div class="pay_method">
+            <form class="payment-form">
+                <h4>Información de Pago</h4>
+                <label for="card-type">Complete datos de su tarjeta:</label>
+                <select id="card-type" required>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                </select>
+
+                <input type="tel" id="card-number" name="card-number" placeholder="Número de tarjeta" required maxlength="19">
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="Fecha de caducidad - MM/YY" required maxlength="5" placeholder="MM/AA">
+                <input type="text" id="security-code" name="security-code" placeholder="Código de seguridad - CVV" required maxlength="3" pattern="\d{3}" placeholder="XXX">
+
+                <h4>Información de facturación</h4>
+                <label for="card-type">Complete con sus datos:</label>
+                <input type="text" id="name" name="name" placeholder="Nombre" required>
+                <input type="text" id="surname" name="surname" placeholder="Apellido" required>
+                <input type="text" id="city" name="city" placeholder="Ciudad"  required>
+                <input type="text" id="billing-address" name="billing-address" placeholder="Dirección de facturación" required>
+                <input type="tel" id="phone" name="phone" placeholder="Teléfono de contacto" required>
+            </form>
+            <button type="submit">Confirmar compra</button>
         </div>
     </main>
-<script type="module" src="cart.js"></script>
+
+    <script type="module" src="cart.js"></script>
 </body>
 </html>
