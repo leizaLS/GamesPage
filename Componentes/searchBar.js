@@ -102,7 +102,7 @@ export function searchBar() {
                 // Guardar ID y redirigir al detalle
                 item.addEventListener("click", () => {
                     localStorage.setItem("selectedGameId", game.id);
-                    window.location.href = "../DetalleProducto/detail.html";
+                    window.location.href = isInRoot ? './DetalleProducto/detail.html' : '../DetalleProducto/detail.html';
                 });
 
                 resultsContainer.appendChild(item);
