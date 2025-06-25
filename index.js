@@ -151,6 +151,11 @@ releaseSelect.addEventListener("change", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchAllGames();
+
+    // Creamos una lista de carrito vacia
+    if (!localStorage.getItem("cartList")) {
+        localStorage.setItem("cartList", JSON.stringify([]));
+    } 
 });
 
 // Click para ir al detalle
@@ -175,5 +180,3 @@ showMenu.addEventListener("click", () => {
     const menu = document.querySelector(".filters-menu");
     menu.classList.toggle("active");
 });
-
-// Test de carrito

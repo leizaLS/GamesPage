@@ -7,7 +7,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 20px;
     display: flex;
-    visibility: hidden;
     gap: 40px;  
     font-family: "Mukta Vaani", sans-serif;
 }
@@ -20,6 +19,10 @@
 h3 {
     margin: 0;
     color: rgb(127, 127, 127);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
 }
 
 .items {
@@ -80,7 +83,7 @@ h3 {
     width: 60%;
 }
 
-.pay_method button {
+.pay_method button, #btn-clear-cart {
     width: max-content;
     padding: 0.5rem 1rem;
     background-color: var(--primary-color);
@@ -115,6 +118,19 @@ h4 {
     margin: 20px 0 0;
 }
 
+.quantity {
+    padding: 0 10px;
+}
+
+.emptyMsg {
+    display: none;
+    text-align: center;
+}
+
+.emptyMsg img {
+    width: 70%;
+}
+
 @media (max-width: 1200px) {
     .pay_method input, .pay_method button, select {
         width: 90%;
@@ -138,5 +154,11 @@ h4 {
 
     .pay_method button {
         width: 50%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .items {
+        width: 75%;
     }
 }

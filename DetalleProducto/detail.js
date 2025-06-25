@@ -106,11 +106,7 @@ function cartItems(){
     el.textContent = `(${count + 1})`;
 }
 
-addItem.addEventListener("click", () => {
-    if (!localStorage.getItem("cartList")) {
-        localStorage.setItem("cartList", JSON.stringify([]));
-    } 
-    
+addItem.addEventListener("click", () => {  
     let list = JSON.parse(localStorage.getItem("cartList")); 
     let id = localStorage.getItem("selectedGameId");
     list.push(id); 

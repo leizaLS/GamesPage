@@ -6,7 +6,10 @@ export function searchBar() {
 
     let n = "";
     if (localStorage.getItem("cartList")){
-        n = "(" + JSON.parse(localStorage.getItem("cartList")).length + ")";
+        let list = JSON.parse(localStorage.getItem("cartList")).length;
+        if (list > 0) {
+           n = "(" + list + ")"; 
+        }
     }
 
     element.innerHTML = `

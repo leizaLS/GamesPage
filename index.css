@@ -187,7 +187,8 @@ body {
     border: none;
     outline: none;
     color: white;
-    resize: none;   
+    resize: none;
+    font-family: "Mukta Vaani", sans-serif;   
 }
 
 .submit-review button {
