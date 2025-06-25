@@ -32,7 +32,7 @@ export function searchBar() {
                 <i class="fa-solid fa-user"></i>
             </button>
 
-            <button id="cart" onclick="window.location.href=${isInRoot ? './Cart/cart.html' : '../Cart/cart.html'}">
+            <button id="cart" onclick="window.location.href='${isInRoot ? './Cart/cart.html' : '../Cart/cart.html'}';">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="cart-count">${n}</span>
             </button>            
