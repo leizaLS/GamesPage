@@ -81,7 +81,7 @@ if (idJuego) {
                 });
                 genresHTML += `</ul>`;
                 document.getElementById('game-genres').innerHTML = genresHTML;
-                document.getElementById('game-info').style.display = "unset";
+                document.querySelector('.container').style.display = "unset";
 
             } else {
                 document.getElementById('game-name').textContent = 'No se encontró información del juego.';

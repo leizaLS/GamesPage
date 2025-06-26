@@ -125,16 +125,16 @@ body {
 /* Review */
 .reviews {
     background-color: var(--dark-gray);
-    padding: 40px 20px;
+    padding: 20px 20px;
     margin: 20px auto;
-    max-width: 1200px;
     border-radius: 10px;
+    width: 90%;
 }
 
 .reviews h2 {
     text-align: center;
-    margin: 0;
     font-family: "Raleway";
+    margin: 0 0 60px;
 }
 
 .review-items {
@@ -143,7 +143,12 @@ body {
 }
 
 .review {
-    padding: 20px;
+    position: relative;
+    background-color: #2b2b2b;
+    border: 2px solid #444;
+    border-radius: var(--border-radius);
+    padding: 50px 20px 15px 20px;
+    width: -webkit-fill-available;
 }
 
 .review h3 {
@@ -159,6 +164,19 @@ body {
 
 .review i {
     color: #f0c956;
+}
+
+.review .user-icon {
+    position: absolute;
+    top: -20%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    background-color: #343131;
+    color: #afafaf;
+    border-radius: 50%;
+    padding: 20px;
+    border: 2px solid #444;
 }
 
 /* Dejar review */
@@ -205,96 +223,6 @@ body {
     background-color: #0056b3;
 }
 
-/* Apartado responsive */
-@media (max-width: 1100px) {
-    .container {
-        display: grid;
-    }
-
-    .filters {
-        width: auto;
-        height: auto;
-    }
-
-    .filters-menu {
-        max-height: fit-content;
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 780px) {
-    .reviews .info-contact {
-        display: grid;
-    }
-
-    .submit-review, .info-contact .map {
-        width: 100%;
-    }
-
-    .container {
-        padding: 0 5px;
-    }
-}
-
-@media (max-width: 600px) {
-    .submit-review form {
-        width: 100%;
-    }
-
-    .review-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: unset;
-    }
-
-    .review {
-        width: 50%;
-    }
-
-    /* menu desplegable */
-    .filters .filters-header .showMenu {
-        visibility: unset;
-        background-color: transparent;
-        cursor: pointer;
-        border-radius: 5px;
-        border: 2px solid var(--primary-color);
-        color: var(--primary-color);
-    }
-
-    .filters-menu {
-        visibility: hidden;
-        max-height: 0;
-    }
-
-    .filters-menu.active {
-        visibility: visible;
-        max-height: fit-content;
-        display: unset;
-        align-items: center;
-        gap: 0;
-    }
-}
-
-@media (max-width: 450px) {
-    .filters {
-        width: auto;
-        padding: 20px 20px 10px;
-    }
-
-    .products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-        gap: 10px;
-    }
-
-    .product h4, p {
-        margin: 5px;
-    }
-}
-
-/* new */
 .info-contact {
     margin-top: 2rem;
     padding: 1rem;
@@ -325,3 +253,114 @@ body {
 .filters-header .showMenu {
     visibility: hidden;
 }
+
+/* Apartado responsive */
+@media (max-width: 1100px) {
+    .container {
+        display: grid;
+    }
+
+    .filters {
+        width: auto;
+        height: auto;
+    }
+
+    .filters-menu {
+        max-height: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .review-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: unset;
+    }
+
+    .review {
+        width: 48%;
+        margin: 0 1% 50px;
+    }
+}
+
+@media (max-width: 780px) {
+    .reviews .info-contact {
+        display: grid;
+    }
+
+    .submit-review, .info-contact .map {
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    .info-contact {
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .submit-review form {
+        width: 100%;
+    }
+
+    /* menu desplegable */
+    .filters .filters-header .showMenu {
+        visibility: unset;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .filters-menu {
+        visibility: hidden;
+        max-height: 0;
+    }
+
+    .filters-menu.active {
+        visibility: visible;
+        max-height: fit-content;
+        display: unset;
+        align-items: center;
+        gap: 0;
+    }
+
+    .reviews {
+        padding: 20px 5px;
+    }
+
+    .review {
+        padding: 10% 10px 10px;
+    }
+
+    .review .user-icon {
+        top: -10%;
+        font-size: 30px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .filters {
+        width: auto;
+        padding: 20px 20px 10px;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+        gap: 10px;
+    }
+
+    .product h4, p {
+        margin: 5px;
+    }
+}
+
+
