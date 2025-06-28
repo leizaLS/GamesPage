@@ -47,3 +47,23 @@
     font-family: "Bebas Neue", sans-serif;
     margin: 2px;
 }
+
+/* Paginacion productos */
+.pagination-numbers {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination-button {
+    padding: 8px 16px;
+    font-size: var(--font-size-small);
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+    border: none;
+}

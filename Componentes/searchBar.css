@@ -5,7 +5,7 @@
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: var(--padding-base);
+    padding: 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -82,7 +82,6 @@
 /* Hover botones */
 #search-banner button:hover {
     transform: scale(1.05);
-    background-color: #102E50;
 }
 
 /* Input con ícono */

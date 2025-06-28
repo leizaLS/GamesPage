@@ -2,26 +2,20 @@
 @import url("./products.css");
 @import url("Componentes/footer.css");
 
-/* fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap');
+/* Fuentes comprimidas */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@100&family=Mukta+Vaani&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --primary-color: #37AA9C;
-    --secondary-color: #0b6161;
+    --secondary-color: #102E50;;
     --background-color: #1e1e1e;
-    --accent-color: #17a2b8;
-    --light-gray: #f5f5f5;
     --dark-gray: #343131;
     --white: #ffffff;
     --border-radius: 8px;
-    --font-size-base: 16px;
-    --font-size-small: 14px;
-    --padding-base: 20px;
-    --button-padding: 10px 20px;
-    --transition-fast: 0.3s ease;
+    --gray-444: #444;
+    --gray-292: #292929;
+    --text-gray: #b4b4b4;
+    --star-color: #f0c956;
 }
 
 * {
@@ -36,14 +30,33 @@ body {
     color: var(--white);
 }
 
-/* Layout */
+h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+input, select, textarea {
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    border: none;
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
 .container {
     display: flex;
     padding: 20px;
     gap: 20px;
 }
 
-/* Filtros */
 .filters {
     width: 250px;
     height: fit-content;
@@ -57,83 +70,40 @@ body {
 }
 
 .filters h3 {
-    margin: 0;
-    color: var(--primary-color);
     font-size: 1.2rem;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
 }
 
 .filters label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 15px 0 5px;
     font-weight: bold;
 }
 
 .filters select {
     width: 100%;
     padding: 10px;
-    font-size: var(--font-size-small);
-    border-radius: var(--border-radius);
-    border: none;
-    background-color: #444;
+    background-color: var(--gray-444);
     color: var(--white);
-    outline: none;   
-    border: none;    
 }
 
-/* Contenido principal */
 .content-column {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.sort-filter select {
-    background-color: #444;
-    color: var(--white);
-    border: none;
-    padding: 10px;
-    border-radius: var(--border-radius);
-    margin-top: 5px;
-}
-
-/* Paginación */
-.pagination-numbers {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.pagination-button {
-    padding: 8px 16px;
-    font-size: var(--font-size-small);
-    cursor: pointer;
-    border: none;
-    background-color: var(--accent-color);
-    color: var(--white);
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-fast);
-}
-
-.pagination-button:hover {
-    background-color: #138496;
-}
-
-/* Review */
 .reviews {
     background-color: var(--dark-gray);
-    padding: 20px 20px;
+    padding: 20px;
     margin: 20px auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     width: 90%;
 }
 
 .reviews h2 {
     text-align: center;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     margin: 0 0 50px;
 }
 
@@ -144,16 +114,14 @@ body {
 
 .review {
     position: relative;
-    background-color: #2b2b2b;
-    border: 2px solid #444;
+    background-color: var(--gray-292);
+    border: 2px solid var(--gray-444);
     border-radius: var(--border-radius);
-    padding: 50px 20px 15px 20px;
+    padding: 50px 20px 15px;
     width: -webkit-fill-available;
 }
 
 .review h3 {
-    margin-top: 0;
-    color: var(--primary-color);
     font-family: "Lato", sans-serif;
 }
 
@@ -163,25 +131,24 @@ body {
 }
 
 .review i {
-    color: #f0c956;
+    color: var(--star-color);
 }
 
 .review .user-icon {
     position: absolute;
-    top: -20%; 
+    top: -20%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 40px;
-    background-color: #343131;
+    background-color: var(--dark-gray);
     color: #afafaf;
     border-radius: 50%;
     padding: 20px;
-    border: 2px solid #444;
+    border: 2px solid var(--gray-444);
     width: 5rem;
     height: 5rem;
 }
 
-/* Dejar review */
 .submit-review {
     width: 40%;
 }
@@ -196,83 +163,71 @@ body {
     gap: 0.75rem;
 }
 
-.submit-review input,
-.submit-review textarea {
+.submit-review input, .submit-review textarea {
     width: 100%;
     padding: 0.5rem;
-    font-size: 1rem;
-    background-color: #292929;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    color: white;
+    background-color: var(--gray-292);
+    color: var(--white);
     resize: none;
-    font-family: "Mukta Vaani", sans-serif;   
+    font-family: "Mukta Vaani", sans-serif;
 }
 
 .submit-review button {
     width: max-content;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.submit-review button:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: var(--secondary-color);
 }
 
 .info-contact {
     margin-top: 2rem;
     padding: 1rem;
-    border-top: 2px solid #444;
+    border-top: 2px solid var(--gray-444);
     display: flex;
     font-family: "Mukta Vaani", sans-serif;
-    color:#c7c7c7;
+    color: #c7c7c7;
     gap: 5%;
 }
 
 .info {
     width: 50%;
-    background-color: #292929;
+    background-color: var(--gray-292);
     padding: 1rem;
-    border: 1px solid #444;
+    border: 1px solid var(--gray-444);
     display: flex;
     gap: 10%;
-    color:#b4b4b4;
-    border-radius: 10px;
+    color: var(--text-gray);
+    border-radius: var(--border-radius);
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.info h4, h3 {
+.info h3, .info h4 {
     margin: 0 0 10px;
 }
 
 .info p {
-    padding-left: 25px;
     margin: 0;
-    color:#b4b4b4;
+    padding-left: 25px;
+    color: var(--text-gray);
 }
 
 .info a {
-    color:#b4b4b4;
+    color: var(--text-gray);
 }
 
 .info-sections {
-    margin: 0;
     padding-bottom: 20px;
 }
 
 .info iframe {
     width: 16rem;
     height: 16rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
-/* menu desplegable */
-.filters-header{
+.filters-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -282,7 +237,6 @@ body {
     visibility: hidden;
 }
 
-/* Apartado responsive */
 @media (max-width: 1300px) {
     .container {
         display: grid;
@@ -294,16 +248,10 @@ body {
     }
 
     .filters-menu {
-        max-height: fit-content;
         display: flex;
         align-items: center;
         gap: 30px;
-    }
-
-    .review-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: unset;
+        max-height: fit-content;
     }
 
     .review {
@@ -311,8 +259,10 @@ body {
         margin: 0 1% 50px;
     }
 
-    .info {
+    .review-items {
+        display: flex;
         flex-wrap: wrap;
+        gap: unset;
     }
 }
 
@@ -336,7 +286,6 @@ body {
     .info {
         width: auto;
         margin-bottom: 1rem;
-        flex-wrap: wrap;
     }
 }
 
@@ -345,9 +294,8 @@ body {
         width: 100%;
     }
 
-    /* menu desplegable */
-    .filters .filters-header .showMenu {
-        visibility: unset;
+    .filters-header .showMenu {
+        visibility: visible;
         background-color: transparent;
         cursor: pointer;
         border-radius: 5px;
@@ -364,8 +312,6 @@ body {
         visibility: visible;
         max-height: fit-content;
         display: unset;
-        align-items: center;
-        gap: 0;
     }
 
     .reviews {
@@ -387,7 +333,6 @@ body {
 
 @media (max-width: 450px) {
     .filters {
-        width: auto;
         padding: 20px 20px 10px;
     }
 
@@ -397,9 +342,7 @@ body {
         gap: 10px;
     }
 
-    .product h4, p {
+    .product h4, .product p {
         margin: 5px;
     }
 }
-
-
