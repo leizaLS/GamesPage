@@ -252,17 +252,22 @@ body {
 
 .info p {
     padding-left: 25px;
-}
-
-.info-sections {
-    display: grid;
     margin: 0;
     color:#b4b4b4;
 }
 
+.info a {
+    color:#b4b4b4;
+}
+
+.info-sections {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
 .info iframe {
-    width: 18rem;
-    height: 18rem;
+    width: 16rem;
+    height: 16rem;
     border-radius: 8px;
 }
 
@@ -278,7 +283,7 @@ body {
 }
 
 /* Apartado responsive */
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .container {
         display: grid;
     }
@@ -305,6 +310,10 @@ body {
         width: 48%;
         margin: 0 1% 50px;
     }
+
+    .info {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 780px) {
@@ -327,6 +336,7 @@ body {
     .info {
         width: auto;
         margin-bottom: 1rem;
+        flex-wrap: wrap;
     }
 }
 
@@ -363,7 +373,7 @@ body {
     }
 
     .review {
-        padding: 10% 10px 10px;
+        padding: 12% 10px 10px;
     }
 
     .review .user-icon {
