@@ -134,7 +134,7 @@ body {
 .reviews h2 {
     text-align: center;
     font-family: "Raleway";
-    margin: 0 0 60px;
+    margin: 0 0 50px;
 }
 
 .review-items {
@@ -177,11 +177,13 @@ body {
     border-radius: 50%;
     padding: 20px;
     border: 2px solid #444;
+    width: 5rem;
+    height: 5rem;
 }
 
 /* Dejar review */
 .submit-review {
-    width: 50%;
+    width: 40%;
 }
 
 .submit-review h3 {
@@ -189,10 +191,9 @@ body {
 }
 
 .submit-review form {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    width: 75%;
 }
 
 .submit-review input,
@@ -226,21 +227,44 @@ body {
 .info-contact {
     margin-top: 2rem;
     padding: 1rem;
-    border-top: 1px solid #ccc;
+    border-top: 2px solid #444;
     display: flex;
+    flex-wrap: wrap;
     font-family: "Mukta Vaani", sans-serif;
     color:#c7c7c7;
+    gap: 5%;
 }
 
-.map {
+.info {
     width: 50%;
-    display: grid;
+    background-color: #292929;
+    padding: 1rem;
+    border: 1px solid #444;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    color:#b4b4b4;
+    border-radius: 10px;
+    justify-content: center;
 }
 
-.map iframe {
-    width: 250px; 
-    height: 250px;
-    border-radius: 5px;
+.info h4, h3 {
+    margin: 0 0 10px;
+}
+
+.info p {
+    padding-left: 25px;
+}
+
+.info-sections {
+    display: grid;
+    margin: 0;
+}
+
+.info iframe {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 8px;
 }
 
 /* menu desplegable */
@@ -301,6 +325,10 @@ body {
         margin-top: 0;
     }
 
+    .info {
+        width: auto;
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -341,8 +369,10 @@ body {
 
     .review .user-icon {
         top: -10%;
-        font-size: 30px;
-        padding: 15px;
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 1rem;
     }
 }
 
