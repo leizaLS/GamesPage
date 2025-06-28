@@ -240,7 +240,6 @@ body {
     padding: 1rem;
     border: 1px solid #444;
     display: flex;
-    flex-wrap: wrap;
     gap: 10%;
     color:#b4b4b4;
     border-radius: 10px;
