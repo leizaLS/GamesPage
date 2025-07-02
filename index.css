@@ -316,6 +316,8 @@ button:hover {
 
     .reviews {
         padding: 20px 5px;
+        margin: 20px 5px;
+        width: fit-content;
     }
 
     .review {
