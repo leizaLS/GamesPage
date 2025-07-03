@@ -54,7 +54,6 @@
 /* Input de búsqueda */
 #search-banner input {
     padding: 10px;
-    font-size: var(--font-size-base);
     outline: none;
     border: none;
     background-color: transparent;
@@ -71,11 +70,7 @@
 .bar-items button {
     padding: 10px 15px;
     background-color: #417b70;
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--white);
     font-size: var(--font-size-base);
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
@@ -143,6 +138,15 @@
     background-color: #444;
 }
 
+span#cart-count {
+    padding: 2px;
+    margin-top: -10px;
+    background-color: #f14444;
+    border-radius: 5px;
+    position: absolute;
+    display: none;
+}
+
 /* Responsive */
 @media (max-width: 800px) {
     .site-name {
@@ -163,8 +167,7 @@
         padding: 20px 5px;
     }
 
-    .site-name,
-    .bar-items .mobile-search {
+    .site-name, .bar-items .mobile-search {
         display: unset;
     }
 

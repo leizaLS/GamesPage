@@ -11,7 +11,7 @@ export function searchBar() {
     if (localStorage.getItem("cartList")) {
         let list = JSON.parse(localStorage.getItem("cartList")).length;
         if (list > 0) {
-            n = "(" + list + ")";
+            n = list;
         }
     }
 
@@ -53,7 +53,6 @@ export function searchBar() {
     }
 
     // Función de búsqueda en Firebase con token
-
     const input = document.getElementById("search-input");
     const resultsContainer = document.querySelector(".search-results");
     let currentSearchToken = 0;
@@ -129,3 +128,10 @@ export function searchBar() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const n = JSON.parse(localStorage.getItem("cartList")).length;
+    if (n != 0) {
+        document.querySelector("#cart-count").style.display = "unset";
+    }
+});

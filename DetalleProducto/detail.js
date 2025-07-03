@@ -102,8 +102,12 @@ const addItem = document.querySelector('.buy-button');
 function cartItems(){
     // Aumentar valor del carrito en search bar
     const el = document.getElementById('cart-count');
-    const count = parseInt(el.textContent.replace(/[()]/g, ""), 10) || 0;
-    el.textContent = `(${count + 1})`;
+    if (el.innerText == "") {
+        el.innerText = "0"; 
+    }
+    const count = parseInt(el.innerText);
+    el.innerText = `${count + 1}`;
+    document.querySelector("#cart-count").style.display = "unset";
 }
 
 addItem.addEventListener("click", () => {  

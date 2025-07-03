@@ -30,7 +30,7 @@ async function getItems() {
         quantityMap[id] = (quantityMap[id] || 0) + 1;
     });
 
-    // Obtener datos únicos de juegos desde Firebase
+    // Obtener datos de juegos Firebase
     const gamesData = await fetchGames(cartList);
 
     let itemsHTML = '';
@@ -92,7 +92,6 @@ async function fetchGames(list) {
             filteredGames.push(game);
         }
     });
-
     return filteredGames;
 }
 
