@@ -5,6 +5,7 @@ GameStock es una tienda en línea ficticia enfocada en la venta de videojuegos. 
 
 <p align="center"> <img src="https://skillicons.dev/icons?i=html,css,javascript" alt="Tech stack" /> </p>
 
+
 ## 🛠️ Tecnologías utilizadas
 
 - HTML, CSS y JavaScript puro
@@ -15,12 +16,14 @@ GameStock es una tienda en línea ficticia enfocada en la venta de videojuegos. 
 
 - Formspree (Para almacenar reseñas de los usuarios)
 
-##📥 Clonar el repositorio
-bash
-Copiar
-Editar
-git clone https://github.com/leizaLS/GamesPage.git
-cd GamesPage
+
+## 📥 Clonar el repositorio
+
+```bash
+    git clone https://github.com/leizaLS/GamesPage.git 
+    cd GamesPage
+```
+
 
 ## 🚀 Características principales
 - 🕹️ Visualización de productos
