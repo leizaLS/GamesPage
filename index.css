@@ -270,6 +270,12 @@ button:hover {
     }
 }
 
+@media (max-width: 1000px) {
+    .search-container {
+        width: 50%;
+    }
+}
+
 @media (max-width: 780px) {
     .reviews .info-contact {
         display: grid;
