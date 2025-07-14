@@ -345,7 +345,11 @@ button:hover {
 
 @media (max-width: 450px) {
     .filters {
-        padding: 20px 20px 5px;
+        padding: 20px 20px 10px;
+    }
+
+    .filters label {
+        margin-top: 2px 
     }
 
     .products {
