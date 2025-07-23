@@ -5,7 +5,7 @@
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 20px;
+    padding: 16px;
     position: fixed;
     top: 0;
     left: 0;
@@ -169,7 +169,7 @@ span#cart-count {
 
 @media (max-width: 550px) {
     #search-banner {
-        padding: 20px 10px;
+        padding: 14px 10px;
         flex-wrap: wrap;
     }
 
@@ -207,6 +207,6 @@ span#cart-count {
     }
 
     #search-banner.active {
-        padding-bottom: 65px;
+        padding-bottom: 70px;
     }
 }

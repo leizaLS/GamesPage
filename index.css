@@ -299,7 +299,19 @@ button:hover {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .filters {
+        padding-bottom: 5px;
+    }
+
+    .filters label {
+        margin-top: 5px;
+    }
+
     .submit-review form {
         width: 100%;
     }
