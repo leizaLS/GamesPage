@@ -32,7 +32,7 @@ export function searchBar() {
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
-            <button title="Iniciar sesión" id="account">
+            <button title="Iniciar sesión/Registro" id="account">
                 <i class="fa-solid fa-user"></i>
             </button>
 
@@ -103,7 +103,6 @@ export function searchBar() {
                     localStorage.setItem("selectedGameId", game.id);
                     window.location.href = isInRoot ? './DetalleProducto/detail.html' : '../DetalleProducto/detail.html';
                 });
-
                 resultsContainer.appendChild(item);
             });
 
@@ -134,4 +133,58 @@ document.addEventListener("DOMContentLoaded", function () {
     if (n != 0) {
         document.querySelector("#cart-count").style.display = "unset";
     }
+});
+
+//Modal login/register
+document.addEventListener("DOMContentLoaded", () => {
+  const accountBtn = document.getElementById("account");
+
+  accountBtn.addEventListener("click", () => {
+    // Crea el HTML del modal
+    const modal = document.createElement("div");
+    modal.id = "auth-modal";
+    modal.classList.add("modal-overlay");
+    modal.innerHTML = `
+      <div class="modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div class="tabs">
+          <div class="tab active" id="tab-login">Login</div>
+          <div class="tab" id="tab-register">Registro</div>
+        </div>
+        <div class="tab-content" id="content-login">
+          <input type="text" placeholder="Usuario">
+          <input type="password" placeholder="Contraseña">
+          <button>Entrar</button>
+        </div>
+
+        <div class="tab-content" id="content-register" style="display:none;">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Tu contraseña">
+          <button>Registrarse</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Eventos de cierre
+    document.getElementById("modal-close").addEventListener("click", () => {
+      modal.remove();
+    });
+
+    // Tabs de login / registro
+    document.getElementById("tab-login").addEventListener("click", () => {
+      document.getElementById("tab-login").classList.add("active");
+      document.getElementById("tab-register").classList.remove("active");
+      document.getElementById("content-login").style.display = "block";
+      document.getElementById("content-register").style.display = "none";
+    });
+
+    document.getElementById("tab-register").addEventListener("click", () => {
+      document.getElementById("tab-register").classList.add("active");
+      document.getElementById("tab-login").classList.remove("active");
+      document.getElementById("content-register").style.display = "block";
+      document.getElementById("content-login").style.display = "none";
+    });
+  });
 });

@@ -210,3 +210,68 @@ span#cart-count {
         padding-bottom: 70px;
     }
 }
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: var(--gray-292);
+  border: 1px solid #383838;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+  font-family: "Raleway";
+}
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.modal .tabs {
+  display: flex;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+.modal .tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.modal .tab.active {
+  border-color: var(--primary-color);
+  font-weight: bold;
+  background-color: var(--gray-444);
+}
+
+.modal .tab-content {
+  display: block;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal input {
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
